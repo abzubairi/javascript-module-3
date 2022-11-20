@@ -5,10 +5,12 @@
  *
  *    a. the name of: "BASE_URL"
  *    b. a value of: "https://jsonplaceholder.typicode.com/users"
- *
- * 2. Export the variable as a named export
- *
- * @example
+ */
+
+/* 2. Export the variable as a named export*/
+export const BASE_URL = "https://jsonplaceholder.typicode.com/users";
+
+/* @example
  *
  * export const test = 1;
  */

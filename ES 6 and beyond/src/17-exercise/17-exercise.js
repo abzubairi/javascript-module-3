@@ -1,7 +1,7 @@
 /**
  * Exercise 17:
  *
- * Complete the code of the exercise17 function so that:
+ * Complete the code of the  function so that:
  *
  * 1. It returns the call to the fetch() method to make
  *    a network request to the following url:
@@ -21,7 +21,14 @@
  */
 
 // Finish the code of the function
-function exercise17() {}
+function exercise17() {
+    fetch("https://jsonplaceholder.typicode.com/users/1")
+        .then((response) => response.json())
+        .then((data) => displayContents(data))
+        .catch((reason) => {
+            console.log(reason.toString());
+        });
+}
 
 // Don’t change the code bellow this line
 function displayContents(data) {

@@ -26,9 +26,14 @@ describe("06-exercises", () => {
     asyncAdd(5, 5, callback);
 
     // Finish the test
-    function callback(result) {
+    function callback(result,done) {
+      if (error) {
+        throw error;
+      }
+      
       expect(result).toBe(10);
     }
+    done()
   });
 
   /**
@@ -48,6 +53,9 @@ describe("06-exercises", () => {
     expect.assertions(1);
 
     // Finish the test
+    return fetchUserOK(userID).then((user) => {
+      expect(user).toStrictEqual(expectedUser)
+    })
   });
 
   /**
@@ -69,5 +77,6 @@ describe("06-exercises", () => {
     expect.assertions(1);
 
     // Finish the test
+    return expect(fetchUserFail(userID)).rejects.toMatch(expectedMessage)
   });
 });
